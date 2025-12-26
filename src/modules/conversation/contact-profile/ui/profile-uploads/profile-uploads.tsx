@@ -1,5 +1,7 @@
 import clsx from 'clsx';
+import { PHOTOS } from 'modules/conversation/shared/utils/profile';
 import { JSX, useState } from 'react';
+import { ImageUI } from 'shared/ui/image';
 import styles from './profile-uploads.module.scss';
 
 export const ProfileUploads = (): JSX.Element => {
@@ -7,22 +9,22 @@ export const ProfileUploads = (): JSX.Element => {
     {
       id: 'media',
       title: 'Медиа',
-      content: <p>Контент первой вкладки</p>,
+      content: PHOTOS,
     },
     {
       id: 'files',
       title: 'Файлы',
-      content: <p>Контент второй вкладки</p>,
+      content: [],
     },
     {
       id: 'voices',
       title: 'Голосовые',
-      content: <p>Контент третьей вкладки</p>,
+      content: [],
     },
     {
       id: 'links',
       title: 'Ссылки',
-      content: <p>Контент четвертой вкладки</p>,
+      content: [],
     },
   ];
 
@@ -37,11 +39,17 @@ export const ProfileUploads = (): JSX.Element => {
             className={clsx(styles.tab, activeTab === index && styles.active)}
             onClick={() => setActiveTab(index)}
           >
-            <div className={styles.tabContent}>
+            <div className={styles.tabButtons}>
               <span className={styles.label}>{tab.title}</span>
               <div className={clsx(styles.border, activeTab === index && styles.active)}></div>
             </div>
           </button>
+        ))}
+      </div>
+
+      <div className={styles.tabContent}>
+        {tabs[activeTab].content.map((item) => (
+          <ImageUI key={item.id} src={item.src} alt={item.alt} width={117} height={117} />
         ))}
       </div>
     </div>

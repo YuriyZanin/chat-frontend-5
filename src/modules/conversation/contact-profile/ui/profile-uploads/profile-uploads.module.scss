@@ -1,14 +1,18 @@
 @use 'shared/styles/03_mixins' as mixins;
 
 .container {
-  @include mixins.flex-box($direction: row, $align: center, $justify: start);
-  padding: 0 16px 0 16px;
-  border-bottom: 0.033rem solid #0000004d;
+  @include mixins.flex-box($direction: column, $align: center, $justify: start, $gap: 8px);
+  overflow: hidden;
+
+  .tabs {
+    padding: 0 16px 0 16px;
+    border-bottom: 0.033rem solid #0000004d;
+  }
 
   .tab {
     padding: 12px 10px 0 10px;
 
-    .tabContent {
+    .tabButtons {
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -37,5 +41,9 @@
 
   .active {
     color: var(--brand-primary, #7769e1);
+  }
+
+  .tabContent {
+    @include mixins.flex-box($direction: row, $align: center, $justify: center, $gap: 2px, $wrap: wrap);
   }
 }
