@@ -6,7 +6,7 @@ import { ProfileNotificationProps } from './profile-notification.props';
 export const ProfileNotification = ({ uid }: ProfileNotificationProps): JSX.Element => {
   const [enable, setEnable] = useState(true);
 
-  const handleToggle = () => {
+  const handleToggle = (): void => {
     setEnable(!enable);
   };
 
