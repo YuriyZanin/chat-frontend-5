@@ -1,4 +1,3 @@
-'use client';
 import clsx from 'clsx';
 import { JSX, useState } from 'react';
 import styles from './profile-uploads.module.scss';

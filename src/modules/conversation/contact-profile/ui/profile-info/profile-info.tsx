@@ -16,27 +16,33 @@ export const ProfileInfo = ({ nickname, phoneNumber, birthDay, about }: ProfileI
           <CopyIcon />
         </button>
       </div>
-      <div className={clsx(styles.item, styles.itemBorder)}>
-        <div className={styles.content}>
-          <div className={styles.label}>Номер телефона</div>
-          <div className={styles.link}>{phoneNumber}</div>
+      {phoneNumber && (
+        <div className={clsx(styles.item, styles.itemBorder)}>
+          <div className={styles.content}>
+            <div className={styles.label}>Номер телефона</div>
+            <div className={styles.link}>{phoneNumber}</div>
+          </div>
+          <button>
+            <CopyIcon />
+          </button>
         </div>
-        <button>
-          <CopyIcon />
-        </button>
-      </div>
-      <div className={clsx(styles.item, styles.itemBorder)}>
-        <div className={styles.content}>
-          <div className={styles.label}>День рождения</div>
-          <div className={styles.text}>{birthDay}</div>
+      )}
+      {birthDay && (
+        <div className={clsx(styles.item, styles.itemBorder)}>
+          <div className={styles.content}>
+            <div className={styles.label}>День рождения</div>
+            <div className={styles.text}>{birthDay}</div>
+          </div>
         </div>
-      </div>
-      <div className={clsx(styles.item, styles.itemBorder)}>
-        <div className={styles.content}>
-          <div className={styles.label}>О себе</div>
-          <div className={styles.text}>{about}</div>
+      )}
+      {about && (
+        <div className={clsx(styles.item, styles.itemBorder)}>
+          <div className={styles.content}>
+            <div className={styles.label}>О себе</div>
+            <div className={styles.text}>{about}</div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
