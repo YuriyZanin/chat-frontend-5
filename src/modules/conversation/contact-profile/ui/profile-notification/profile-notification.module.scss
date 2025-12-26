@@ -29,10 +29,21 @@
         width: 24px;
         height: 24px;
         top: 4px;
-        right: 4px;
         background-color: var(--surface-base, #ffffff);
         border-radius: 24px;
       }
+
+      .circle.enabled {
+        right: 4px;
+      }
+
+      .circle.disabled {
+        left: 4px;
+      }
+    }
+
+    .toggle.disabled {
+      background-color: var(--text-state-disabled);
     }
   }
 }
