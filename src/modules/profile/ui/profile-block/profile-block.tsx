@@ -1,6 +1,6 @@
 'use client';
 
-import { MAX_PROFILE } from 'modules/conversation/shared/utils/profile';
+import { MAX_PROFILE } from 'modules/profile/shared/utils/profile';
 import { JSX } from 'react';
 import { AddButton } from '../action-button';
 import { ProfileAvatar } from '../profile-avatar';
