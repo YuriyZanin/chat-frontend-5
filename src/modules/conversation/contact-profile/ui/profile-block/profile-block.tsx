@@ -16,7 +16,7 @@ export const ProfileBlock = ({ uid }: ProfileBlockProps): JSX.Element => {
   void uid;
 
   return (
-    <ProfileLayout header={<ProfileHeader uid={uid} />}>
+    <ProfileLayout header={<ProfileHeader uid={uid} isBlocked={MAX_PROFILE.is_blocked} />}>
       <ProfileAvatar
         avatarHref={MAX_PROFILE.avatar_url ?? '/images/profile/default.png'}
         firstName={MAX_PROFILE.first_name}
