@@ -7,10 +7,10 @@ type TabContentType = 'media' | 'files' | 'voices' | 'links';
 export type Tab = {
   id: TabContentType;
   title: string;
-  content: FilesContent | LinksContent;
+  content: FileContent | LinksContent;
 };
 
-export type FilesContent = {
+export type FileContent = {
   id: number;
   file: string;
   url: string;
