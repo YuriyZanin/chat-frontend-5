@@ -21,6 +21,17 @@ export type FileContent = {
   progress?: number;
 };
 
+export type VoiceContent = {
+  id: number;
+  file: string;
+  url: string;
+  size: string;
+  type: string;
+  created: string;
+  isPlaying?: boolean;
+  audioRef?: HTMLAudioElement | null;
+};
+
 export type LinksContent = {
   url: string;
   title: string;

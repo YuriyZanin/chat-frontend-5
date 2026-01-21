@@ -1,7 +1,6 @@
-import { FileContent } from '../../profile-uploads.props';
+import { VoiceContent } from '../../profile-uploads.props';
 
 export type VoiceProps = {
-  item: FileContent;
-  onPlay: (audioRef: HTMLAudioElement | null) => void;
-  onPause: () => void;
+  item: VoiceContent;
+  onToggle: (fileId: number, audioRef: HTMLAudioElement | null) => void;
 };
