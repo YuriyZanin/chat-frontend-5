@@ -4,6 +4,7 @@ import { JSX, ReactElement, useState } from 'react';
 import { FilesTab } from './files-tab';
 import { LinksTab } from './links-tab';
 import { MediaTab } from './media-tab';
+import { TABS } from './profile-uploads.constant';
 import styles from './profile-uploads.module.scss';
 import { ProfileUploadsProps } from './profile-uploads.props';
 import { VoicesTab } from './voices-tab';
@@ -11,29 +12,10 @@ import { VoicesTab } from './voices-tab';
 export const ProfileUploads = ({ uid }: ProfileUploadsProps): JSX.Element => {
   void uid;
 
-  const tabs = [
-    {
-      id: 'media',
-      title: 'Медиа',
-    },
-    {
-      id: 'files',
-      title: 'Файлы',
-    },
-    {
-      id: 'voices',
-      title: 'Голосовые',
-    },
-    {
-      id: 'links',
-      title: 'Ссылки',
-    },
-  ];
-
   const [activeTab, setActiveTab] = useState(0);
 
   const renderTab = (): ReactElement | null => {
-    const tab = tabs[activeTab];
+    const tab = TABS[activeTab];
 
     switch (tab.id) {
       case 'media':
@@ -52,7 +34,7 @@ export const ProfileUploads = ({ uid }: ProfileUploadsProps): JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.tabs}>
-        {tabs.map((tab, index) => (
+        {TABS.map((tab, index) => (
           <button
             key={tab.id}
             className={clsx(styles.tab, activeTab === index && styles.active)}
