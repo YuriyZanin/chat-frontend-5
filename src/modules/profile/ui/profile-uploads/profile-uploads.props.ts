@@ -7,7 +7,7 @@ type TabContentType = 'media' | 'files' | 'voices' | 'links';
 export type Tab = {
   id: TabContentType;
   title: string;
-  content: FilesContent | LinksContent;
+  content: FilesContent | LinkContent;
 };
 
 export type FilesContent = {
@@ -21,7 +21,8 @@ export type FilesContent = {
   progress?: number;
 };
 
-export type LinksContent = {
+export type LinkContent = {
+  messageId: number;
   url: string;
   title: string;
   fromUser: string;
