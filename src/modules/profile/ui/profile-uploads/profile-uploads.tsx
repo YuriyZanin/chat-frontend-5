@@ -48,7 +48,7 @@ export const ProfileUploads = ({ uid }: ProfileUploadsProps): JSX.Element => {
         ))}
       </div>
 
-      {renderTab()}
+      <div className={styles.tabContent}>{renderTab()}</div>
     </div>
   );
 };
