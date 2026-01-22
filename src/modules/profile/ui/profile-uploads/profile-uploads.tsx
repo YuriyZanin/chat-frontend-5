@@ -1,7 +1,8 @@
 import clsx from 'clsx';
-import { FILES, PHOTOS } from 'modules/profile/shared/utils/profile';
+import { FILES, LINKS, PHOTOS } from 'modules/profile/shared/utils/profile';
 import { JSX, ReactElement, useState } from 'react';
-import { FilesTab } from './files-tab/files-tab';
+import { FilesTab } from './files-tab';
+import { LinksTab } from './links-tab';
 import { MediaTab } from './media-tab';
 import styles from './profile-uploads.module.scss';
 import { ProfileUploadsProps } from './profile-uploads.props';
@@ -13,22 +14,18 @@ export const ProfileUploads = ({ uid }: ProfileUploadsProps): JSX.Element => {
     {
       id: 'media',
       title: 'Медиа',
-      content: PHOTOS,
     },
     {
       id: 'files',
       title: 'Файлы',
-      content: FILES,
     },
     {
       id: 'voices',
       title: 'Голосовые',
-      content: [],
     },
     {
       id: 'links',
       title: 'Ссылки',
-      content: [],
     },
   ];
 
@@ -39,9 +36,11 @@ export const ProfileUploads = ({ uid }: ProfileUploadsProps): JSX.Element => {
 
     switch (tab.id) {
       case 'media':
-        return <MediaTab items={tab.content} />;
+        return <MediaTab items={PHOTOS} />;
       case 'files':
-        return <FilesTab items={tab.content} />;
+        return <FilesTab items={FILES} />;
+      case 'links':
+        return <LinksTab items={LINKS} />;
       default:
         return null;
     }
