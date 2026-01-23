@@ -4,7 +4,7 @@ import { JSX, ReactElement, useState } from 'react';
 import { FilesTab } from './files-tab';
 import { LinksTab } from './links-tab';
 import { MediaTab } from './media-tab';
-import { TABS } from './profile-uploads.constant';
+import { TABS } from './profile-uploads.constants';
 import styles from './profile-uploads.module.scss';
 import { ProfileUploadsProps } from './profile-uploads.props';
 import { VoicesTab } from './voices-tab';
